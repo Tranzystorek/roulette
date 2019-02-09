@@ -9,6 +9,7 @@ fi
 
 # to scare the user
 trap '' INT
+trap '' QUIT
 
 # 1/6 chance to trigger simulated "rm -rfv --no-preserve-root /"
 if [[ "$(($RANDOM % 6))" -ne 0 ]]; then
