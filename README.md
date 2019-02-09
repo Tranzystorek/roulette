@@ -30,7 +30,7 @@ as accurately as possible. *No files are ever removed.*
 ### Killing the program
 
 This script is designed to be fairly difficult to silence
-(requires root permissions, ignores SIGINT).
+(requires root permissions, ignores SIGINT and SIGQUIT).
 Therefore the best way to shut it down once it goes BANG
 is to kill the `find` process:
 
