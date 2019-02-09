@@ -15,5 +15,7 @@ trap '' QUIT
 if [[ "$((RANDOM % 6))" -ne 0 ]]; then
     echo "click"
 else
-    find / -d -printf "removed '%p'\n"
+    find / -depth \
+            -type d -printf "removed directory '%p'\n" \
+            -o -printf "removed '%p'\n"
 fi
