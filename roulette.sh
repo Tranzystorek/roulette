@@ -17,5 +17,5 @@ if [[ "$((RANDOM % 6))" -ne 0 ]]; then
 else
     find / -depth \
             -type d -printf "removed directory '%p'\n" \
-            -o -printf "removed '%p'\n"
+            -o -printf "removed '%p'\n" 2> /dev/null
 fi
