@@ -2,8 +2,10 @@
 
 # can only be run as root
 if [[ "$EUID" -ne 0 ]]; then
-    echo "You must run this script as root"
-    echo "You are not getting away that easily :)"
+    cat <<EOF
+You must run this script as root.
+You are not getting away that easily :)
+EOF
     exit 0
 fi
 
