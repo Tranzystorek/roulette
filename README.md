@@ -17,7 +17,7 @@ Linux tools:
 
 ### Execution
 
-Source the script in your victim's shell, then run the 'roulette' function.
+Source the script in your victim's shell, then run the `roulette` function.
 It will ask for root permissions via the `sudo` command.
 
 ### How it works
