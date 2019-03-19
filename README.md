@@ -17,9 +17,8 @@ Linux tools:
 
 ### Execution
 
-Run it with sudo permissions (it will complain otherwise).
-For increased danger feel set its permissions
-to 711 so that only the owner can read or modify it.
+Source the script in your victim's shell, then run the 'roulette' function.
+It will ask for root permissions via the `sudo` command.
 
 ### How it works
 

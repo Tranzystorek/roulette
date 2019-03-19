@@ -1,23 +1,18 @@
-#!/bin/bash
+function _roulette () {
+  # to scare the user
+  trap '' INT
+  trap '' QUIT
 
-# can only be run as root
-if [[ "$EUID" -ne 0 ]]; then
-    cat <<EOF
-You must run this script as root.
-You are not getting away that easily :)
-EOF
-    exit 0
-fi
-
-# to scare the user
-trap '' INT
-trap '' QUIT
-
-# 1/6 chance to trigger simulated "rm -rfv --no-preserve-root /"
-if [[ "$((RANDOM % 6))" -ne 0 ]]; then
+  # 1/6 chance to trigger simulated "rm -rfv --no-preserve-root /"
+  if [[ "$((RANDOM % 6))" -ne 0 ]]; then
     echo "click"
-else
+  else
     find / -depth \
             -type d -printf "removed directory '%p'\n" \
             -o -printf "removed '%p'\n" 2> /dev/null
-fi
+  fi
+}
+
+function roulette () {
+  sudo bash -c "$(declare -f _roulette); _roulette"
+}
