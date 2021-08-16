@@ -7,11 +7,12 @@ function _roulette () {
     # 1/6 chance to trigger simulated "rm -rfv --no-preserve-root /"
     if (( RANDOM % 6 != 0 )); then
         echo "click"
-    else
-        find / -depth \
-            -type d -printf "removed directory '%p'\n" \
-            -o -printf "removed '%p'\n" 2> /dev/null
+        return
     fi
+
+    find / -depth \
+        -type d -printf "removed directory '%p'\n" \
+        -o -printf "removed '%p'\n" 2> /dev/null
 }
 
 function roulette () {
